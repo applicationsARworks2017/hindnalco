@@ -3,6 +3,15 @@
 
     <item
         is-multidex="false"
+        jar="/Users/amaresh/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/amaresh/Desktop/AmareshWorks/hindnalco/app/build/intermediates/pre-dexed/debug/picasso-2.5.2_f0519c61904509f1f75a40e907a5bde9a9a045f7.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/amaresh/.android/build-cache/bc141094f9b5d1e1d6efab4eb88795a236a29c91/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"

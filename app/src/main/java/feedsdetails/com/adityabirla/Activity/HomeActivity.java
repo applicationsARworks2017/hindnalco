@@ -1,11 +1,13 @@
 
 package feedsdetails.com.adityabirla.Activity;
 
+import android.content.DialogInterface;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -18,6 +20,7 @@ public class HomeActivity extends AppCompatActivity {
     private BottomNavigationView mBottomNav;
     private int mSelectedItem;
     private static final String SELECTED_ITEM = "arg_selected_item";
+    long back_pressed;
 
 
     @Override
@@ -88,5 +91,35 @@ public class HomeActivity extends AppCompatActivity {
         outState.putInt(SELECTED_ITEM, mSelectedItem);
         super.onSaveInstanceState(outState);
     }
+    @Override
+    public void onBackPressed() {
+
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.container, new FeedList(), new FeedList().getTag());
+        ft.commit();
+
+        if (back_pressed + 2000 > System.currentTimeMillis()) {
+            //super.onBackPressed();
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Do you want to exit from the application?")
+                    .setCancelable(false)
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            finish();
+                        }
+                    })
+                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+            AlertDialog alert = builder.create();
+            alert.show();
+
+        }
+        back_pressed = System.currentTimeMillis();
+
+    }
+
 
 }

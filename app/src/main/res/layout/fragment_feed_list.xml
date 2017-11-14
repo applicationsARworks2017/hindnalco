@@ -5,138 +5,59 @@
     android:background="@color/background"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
     tools:context="feedsdetails.com.adityabirla.Fragment.FeedList">
+
+    <include layout="@layout/activityresult"
+        android:visibility="gone"
+        android:id="@+id/activityresult"></include>
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <ScrollView
+        android:layout_height="match_parent"
+        android:id="@+id/rel_feedlist"
+        android:visibility="visible">
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/loader_feeds"/>
+        <SearchView
+            android:id="@+id/feedssSearch"
+            android:layout_width="wrap_content"
+            android:background="@color/background"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"/>
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_below="@+id/feedssSearch"
+            android:layout_marginTop="5dp"
+            android:id="@+id/swipe_feeds"
+            android:layout_height="match_parent">
+            <ListView
+                android:layout_width="match_parent"
+                android:id="@+id/lv_feeds"
+                android:divider="@null"
+                android:layout_height="match_parent">
+            </ListView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Feeds Found"
+            android:layout_centerInParent="true"
+            android:id="@+id/tv_nofeeds"
+            android:visibility="gone"/>
+    <!--<ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp">
-               <RelativeLayout
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:layout_margin="5dp">
-                   <TextView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:text="Amaresh Samantaray"
-                       android:textColor="@color/colorPrimaryDark"
-                       android:textSize="14dp"
-                       android:textStyle="bold"
-                       android:id="@+id/name"/>
-                   <TextView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:text="28.10.2017 04:05 PM"
-                       android:id="@+id/time"
-                       android:layout_below="@id/name"/>
-                   <TextView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:layout_below="@+id/time"
-                       android:layout_marginTop="10dp"
-                       android:textColor="@color/black"
-                       android:id="@+id/contentheading"
-                       android:text="Father Sacrificed 8-Year-Old Daughter, Reason Will Make Your Blood Boil"/>
-                   <ImageView
-                       android:layout_width="match_parent"
-                       android:layout_height="200dp"
-                       android:layout_marginTop="10dp"
-                       android:background="@drawable/img1"
-                       android:id="@+id/img"
-                       android:layout_below="@id/contentheading"/>
-                   <LinearLayout
-                       android:layout_width="match_parent"
-                       android:layout_height="1dp"
-                       android:layout_below="@id/img"
-                       android:layout_marginTop="5dp"
-                       android:id="@+id/hlin"
-                       android:orientation="horizontal"
-                       android:background="@color/deep_background"></LinearLayout>
-                   <LinearLayout
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:layout_below="@id/hlin"
-                       android:layout_marginTop="5dp"
-                       android:layout_centerHorizontal="true">
-                       <RelativeLayout
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content">
-                           <ImageView
-                               android:layout_width="wrap_content"
-                               android:layout_height="wrap_content"
-                               android:background="@mipmap/ic_thumb_up_black_24dp"
-                               android:id="@+id/likeim"/>
-                           <TextView
-                               android:layout_width="wrap_content"
-                               android:layout_height="wrap_content"
-                               android:layout_below="@id/likeim"
-                               android:text="242"
-                               android:textColor="@color/black"/>
-                       </RelativeLayout>
-                       <RelativeLayout
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:layout_marginLeft="40dp">
-                           <ImageView
-                               android:layout_width="wrap_content"
-                               android:layout_height="wrap_content"
-                               android:background="@mipmap/ic_mode_comment_black_24dp"
-                               android:id="@+id/likeim1"/>
-                           <TextView
-                               android:layout_width="wrap_content"
-                               android:layout_height="wrap_content"
-                               android:layout_below="@id/likeim1"
-                               android:text="242"
-                               android:textColor="@color/black"/>
-                       </RelativeLayout>
-                       <RelativeLayout
-                           android:layout_width="wrap_content"
-                           android:layout_marginLeft="40dp"
-                           android:layout_height="wrap_content">
-                           <ImageView
-                               android:layout_width="wrap_content"
-                               android:layout_height="wrap_content"
-                               android:background="@mipmap/ic_share_black_24dp"
-                               android:id="@+id/likeim2"/>
-                           <TextView
-                               android:layout_width="wrap_content"
-                               android:layout_height="wrap_content"
-                               android:layout_below="@id/likeim2"
-                               android:text="242"
-                               android:textColor="@color/black"/>
-                       </RelativeLayout>
-                       <RelativeLayout
-                           android:layout_width="wrap_content"
-                           android:layout_marginLeft="40dp"
-                           android:layout_height="wrap_content">
-                           <ImageView
-                               android:layout_width="wrap_content"
-                               android:layout_height="wrap_content"
-                               android:background="@mipmap/ic_file_download_black_24dp"
-                               android:id="@+id/likeim3"/>
-                           <TextView
-                               android:layout_width="wrap_content"
-                               android:layout_height="wrap_content"
-                               android:layout_below="@id/likeim3"
-                               android:text="242"
-                               android:textColor="@color/black"/>
-                       </RelativeLayout>
 
-                   </LinearLayout>
-
-               </RelativeLayout>
-            </android.support.v7.widget.CardView>
 
         </LinearLayout>
-    </ScrollView>
+    </ScrollView>-->
     <!--<android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
