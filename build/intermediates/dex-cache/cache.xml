@@ -3,21 +3,30 @@
 
     <item
         is-multidex="false"
-        jar="/Users/amaresh/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jar="/Users/mobileapplication/.android/build-cache/2d7399bf6785aae7cb80d26c33ccd75387b00691/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a8340f8c17337c864648c13abe1416d34c80ec14">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/pre-dexed/debug/classes_48ccf72d9a835346fa2bcc65807e7774b83d6735.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mobileapplication/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.3"
         sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="/Users/amaresh/Desktop/AmareshWorks/hindnalco/app/build/intermediates/pre-dexed/debug/picasso-2.5.2_f0519c61904509f1f75a40e907a5bde9a9a045f7.jar" />
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/pre-dexed/debug/picasso-2.5.2_63e8454e754c7e156f00a34ce96ce5cbe57fad16.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/amaresh/.android/build-cache/bc141094f9b5d1e1d6efab4eb88795a236a29c91/output/jars/classes.jar"
+        jar="/Users/mobileapplication/.android/build-cache/9ae47008d8b0b3842f7521ddb126542cda11dfe0/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.3"
         sha1="7e6a161b3796c15fe00755ce47e03067e568ecc4">
-        <dex dex="/Users/amaresh/Desktop/AmareshWorks/hindnalco/app/build/intermediates/pre-dexed/debug/classes_9f2ac450ba2e4592d5adc5a68290428306c32cb1.jar" />
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/pre-dexed/debug/classes_78f1a17a6a182eaaa18aa48a87d490d26f1f7852.jar" />
     </item>
 
 </items>

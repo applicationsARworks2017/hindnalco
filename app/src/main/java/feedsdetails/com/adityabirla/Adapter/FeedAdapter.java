@@ -3,21 +3,18 @@ package feedsdetails.com.adityabirla.Adapter;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.squareup.picasso.Picasso;
@@ -34,10 +31,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
-import feedsdetails.com.adityabirla.Activity.HomeActivity;
-import feedsdetails.com.adityabirla.Activity.Login_Activity;
 import feedsdetails.com.adityabirla.Pojo.Feeds;
-import feedsdetails.com.adityabirla.Pojo.User;
 import feedsdetails.com.adityabirla.R;
 import feedsdetails.com.adityabirla.Util.CheckInternet;
 import feedsdetails.com.adityabirla.Util.Constants;
@@ -46,6 +40,8 @@ public class FeedAdapter extends BaseAdapter {
     Context _context;
     ArrayList<Feeds> new_list;
     Holder holder,holder1;
+    String user_id;
+    int likecount;
 
     public FeedAdapter(Context context, ArrayList<Feeds> fList) {
         this._context=context;
@@ -119,14 +115,18 @@ public class FeedAdapter extends BaseAdapter {
         holder.comment_count.setText(_pos.getNo_of_comment());
         holder.share_count.setText(_pos.getNo_of_share());
         holder.download_count.setText(_pos.getNo_of_downloads());
+        user_id = _context.getSharedPreferences(Constants.SHAREDPREFERENCE_KEY, 0).getString(Constants.USER_ID, null);
 
         final MediaPlayer mp = MediaPlayer.create(_context, R.raw.click_sound);
         holder.likeim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                holder1=(Holder)v.getTag();
+                likecount=Integer.valueOf(_pos.getNo_of_like());
                 mp.start();
                 if(CheckInternet.getNetworkConnectivityStatus(_context)){
-
+                    LikeAsyntask likeAsyntask=new LikeAsyntask();
+                    likeAsyntask.execute(user_id,_pos.getId(),"1");
                 }
                 else{
                     Constants.noInternetDialouge(_context,"No Internet");
@@ -143,6 +143,17 @@ public class FeedAdapter extends BaseAdapter {
                 share.setType("text/plain");
                 share.putExtra(Intent.EXTRA_TEXT, message);
                 _context.startActivity(Intent.createChooser(share, "Share the title with file"));
+                holder1=(Holder)v.getTag();
+                likecount=Integer.valueOf(_pos.getNo_of_like());
+                mp.start();
+                if(CheckInternet.getNetworkConnectivityStatus(_context)){
+                    LikeAsyntask likeAsyntask=new LikeAsyntask();
+                    likeAsyntask.execute(user_id,_pos.getId(),"1");
+                }
+                else{
+                    Constants.noInternetDialouge(_context,"No Internet");
+
+                }
             }
         });
 
@@ -166,12 +177,13 @@ public class FeedAdapter extends BaseAdapter {
         protected Void doInBackground(String... params) {
 
             try {
-                String user_name = params[0];
-                String password = params[1];
+                String _user_id = params[0];
+                String _file_id = params[1];
+                String _liked = params[2];
                 InputStream in = null;
                 int resCode = -1;
 
-                String link =Constants.ONLINE_URL+ Constants.LOGIN ;
+                String link =Constants.ONLINE_URL+ Constants.LIKE ;
                 URL url = new URL(link);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setReadTimeout(10000);
@@ -184,8 +196,9 @@ public class FeedAdapter extends BaseAdapter {
                 conn.setRequestMethod("POST");
 
                 Uri.Builder builder = new Uri.Builder()
-                        .appendQueryParameter("username", user_name)
-                        .appendQueryParameter("password", password);
+                        .appendQueryParameter("user_id", _user_id)
+                        .appendQueryParameter("file_id", _file_id)
+                        .appendQueryParameter("liked", _liked);
 
                 //.appendQueryParameter("deviceid", deviceid);
                 String query = builder.build().getEncodedQuery();
@@ -217,34 +230,21 @@ public class FeedAdapter extends BaseAdapter {
 
                 /**
                  * {
-                 {
-                 "users": {
-                 "id": 2,
-                 "username": "avinash",
-                 "email_address": "avinash@gmail.com",
-                 "contact_no": 2147483647,
-                 "created": "2017-11-11T00:00:00+00:00",
-                 "modified": "2017-11-11T00:00:00+00:00",
-                 "message": "user available.",
+                 "res": {
+                 "message": "File liked has been saved.",
                  "status": 1
                  }
                  }
                  * */
-                userlist=new ArrayList<>();
 
                 if (response != null && response.length() > 0) {
                     JSONObject res = new JSONObject(response.trim());
-                    JSONObject j_obj=res.getJSONObject("users");
+                    JSONObject j_obj=res.getJSONObject("res");
                     server_status = j_obj.optInt("status");
                     if (server_status == 1) {
-                        id=j_obj.getString("id");
-                        username=j_obj.getString("username");
-                        email_address=j_obj.getString("email_address");
-                        contact_no=j_obj.getString("contact_no");
-                        User user_list=new User(id,username,email_address,contact_no);
-                        userlist.add(user_list);
+                        server_message="Liked";
                     } else {
-                        server_message = "Invalid Credentials";
+                        server_message = "Error";
                     }
                 }
                 return null;
@@ -259,22 +259,9 @@ public class FeedAdapter extends BaseAdapter {
         @Override
         protected void onPostExecute(Void user) {
             super.onPostExecute(user);
-            loader_login.setVisibility(View.GONE);
-            if (server_status == 1) {
-                SharedPreferences sharedPreferences = Login_Activity.this.getSharedPreferences(Constants.SHAREDPREFERENCE_KEY, 0); // 0 - for private mode
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString(Constants.USER_ID, id);
-                editor.commit();
-                Intent i=new Intent(Login_Activity.this,HomeActivity.class);
-                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivity(i);
-            }
-            else{
-                showSnackBar(server_message);
+            Toast.makeText(_context,server_message,Toast.LENGTH_SHORT).show();
+            holder1.like_count.setText(String.valueOf(likecount+1));
 
-            }
         }
     }
 }
