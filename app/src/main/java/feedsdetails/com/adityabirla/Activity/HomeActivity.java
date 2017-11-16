@@ -14,6 +14,7 @@ import android.view.MenuItem;
 
 import feedsdetails.com.adityabirla.Fragment.FeedList;
 import feedsdetails.com.adityabirla.Fragment.Profile;
+import feedsdetails.com.adityabirla.Fragment.Venue;
 import feedsdetails.com.adityabirla.R;
 
 public class HomeActivity extends AppCompatActivity {
@@ -52,7 +53,10 @@ public class HomeActivity extends AppCompatActivity {
             case R.id.mylist:
                 frag=new FeedList();
                 item.setCheckable(true);
-
+                break;
+            case R.id.location:
+                frag=new Venue();
+                item.setCheckable(true);
                 break;
 
             case R.id.profile:
@@ -94,9 +98,6 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.container, new FeedList(), new FeedList().getTag());
-        ft.commit();
 
         if (back_pressed + 2000 > System.currentTimeMillis()) {
             //super.onBackPressed();

@@ -3,30 +3,156 @@
 
     <item
         is-multidex="false"
-        jar="/Users/mobileapplication/.android/build-cache/2d7399bf6785aae7cb80d26c33ccd75387b00691/output/jars/classes.jar"
+        jar="/Users/amaresh/.android/build-cache/d44de3864e537c8374ce37274458a9b1425f9fd4/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.3"
-        sha1="a8340f8c17337c864648c13abe1416d34c80ec14">
-        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/pre-dexed/debug/classes_48ccf72d9a835346fa2bcc65807e7774b83d6735.jar" />
+        sha1="d29e451fd5bcc265989bf80afd4f149d95d72e7d">
+        <dex dex="/Users/amaresh/Desktop/AmareshWorks/hindnalco/app/build/intermediates/pre-dexed/debug/classes_84df6b47af400621cc3e8ad8ddedd82dc1b0cce8.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/mobileapplication/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jar="/Users/amaresh/.android/build-cache/c02ee561a935fee7ccc3dc65daf0f4d062a5e4bd/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.3"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/pre-dexed/debug/picasso-2.5.2_63e8454e754c7e156f00a34ce96ce5cbe57fad16.jar" />
+        sha1="b7288b3cc80a6e1a0c40e958f94d775b675cb562">
+        <dex dex="/Users/amaresh/Desktop/AmareshWorks/hindnalco/app/build/intermediates/pre-dexed/debug/classes_c5e9459e1f1414b874117dbeba739d23ffe2d063.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/mobileapplication/.android/build-cache/9ae47008d8b0b3842f7521ddb126542cda11dfe0/output/jars/classes.jar"
+        jar="/Users/amaresh/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/25.4.0/f6a2fc748ae3769633dea050563e1613e93c135e/support-annotations-25.4.0.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.3"
-        sha1="7e6a161b3796c15fe00755ce47e03067e568ecc4">
-        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/pre-dexed/debug/classes_78f1a17a6a182eaaa18aa48a87d490d26f1f7852.jar" />
+        sha1="f6a2fc748ae3769633dea050563e1613e93c135e">
+        <dex dex="/Users/amaresh/Desktop/AmareshWorks/hindnalco/app/build/intermediates/pre-dexed/debug/support-annotations-25.4.0_d5cbf3ed47b4cf7f4952220cefcb873aae0b32dc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/amaresh/.android/build-cache/ee9973a4cffe5e81796a52f40b8b0d29149ae504/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f03c448fbcf684ab192c8dc69e6405f206bf12ef">
+        <dex dex="/Users/amaresh/Desktop/AmareshWorks/hindnalco/app/build/intermediates/pre-dexed/debug/classes_a7fc1b48836a9afb2d8ce8d86e5b2ab17236965e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/amaresh/.android/build-cache/bb0b89eed1dbd5e177ed44df0575fb9498809338/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a64026daf4819a589aea776f5deb19b257a104d1">
+        <dex dex="/Users/amaresh/Desktop/AmareshWorks/hindnalco/app/build/intermediates/pre-dexed/debug/classes_d759f7b13ae1c938d6df4331b6c00c69c545ef52.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/amaresh/.android/build-cache/c406766943699abcc618f3478e8de0ff2d083cea/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="8bac503d591e9f8c4edecf54028e5c2a5178a009">
+        <dex dex="/Users/amaresh/Desktop/AmareshWorks/hindnalco/app/build/intermediates/pre-dexed/debug/classes_42c7f4637039d07254d7b765e38e1883634904c2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/amaresh/.android/build-cache/642c23e34dfdfd1abdddbf2ac69f732b1d2f31e6/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3ecb9d2aad9a03dd8d0914b715cc1fc11d942c6c">
+        <dex dex="/Users/amaresh/Desktop/AmareshWorks/hindnalco/app/build/intermediates/pre-dexed/debug/classes_5f8813490cc1bc9aad76123a9e912e623e779642.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/amaresh/.android/build-cache/544d7d3d334b4f021397337abe7e3bf4d096f759/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="05e3d15c623cd98f0eb43c8249fb6151fae0786c">
+        <dex dex="/Users/amaresh/Desktop/AmareshWorks/hindnalco/app/build/intermediates/pre-dexed/debug/classes_54354da9c81551905bd609daa8c68b7a406dfe46.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/amaresh/.android/build-cache/3204b9d129b2838fbe5bd53f7f2e6645485eb6ac/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a7a0aa678c3bbadb67fb41df9e107f7ee9087902">
+        <dex dex="/Users/amaresh/Desktop/AmareshWorks/hindnalco/app/build/intermediates/pre-dexed/debug/classes_8dd3ff2bee7f58a6f1d296d3e28f947bf2ee230f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/amaresh/.android/build-cache/e11236bab4238b9f98fcfeb11643c60032998c1d/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b77e50b3c31d0fc64148530f7077f79ec114b5b9">
+        <dex dex="/Users/amaresh/Desktop/AmareshWorks/hindnalco/app/build/intermediates/pre-dexed/debug/classes_42a01a14d484cb0a637c8bb5567dea968e1bd5e8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/amaresh/.android/build-cache/e4a600f536506a70e94c19306cb392ea6e35c34a/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ac604b742fb7eacc7f995f5bee3bc3b2bfb2d670">
+        <dex dex="/Users/amaresh/Desktop/AmareshWorks/hindnalco/app/build/intermediates/pre-dexed/debug/classes_65493dbccb896917d7c64c8b176c56e6e6667b06.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/amaresh/.android/build-cache/27100045a6cc54fe4bce8d9ccd78a669a90eea7e/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f56821bb02b7f7a9372199fbd8181d3300bde3a7">
+        <dex dex="/Users/amaresh/Desktop/AmareshWorks/hindnalco/app/build/intermediates/pre-dexed/debug/classes_bece47cee3c88ff5f18efffc3b2e19ca8d1cb7fb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/amaresh/.android/build-cache/f3a4431d83a516c693bdd3c9bf02b8cb4384aeb8/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4961be1437163ab598620a3c907c0f3432936f51">
+        <dex dex="/Users/amaresh/Desktop/AmareshWorks/hindnalco/app/build/intermediates/pre-dexed/debug/classes_12e9c2584e748648bb1ec119c235ebfc63432f35.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/amaresh/.android/build-cache/bd0870da849c81dacff5ed68efe3353b0e498765/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e04f28ac2dd9bbe48ced6fc87fedf46c2586f5d6">
+        <dex dex="/Users/amaresh/Desktop/AmareshWorks/hindnalco/app/build/intermediates/pre-dexed/debug/classes_278320d4c1bb1d86a831351ccc30170b6d448a3b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/amaresh/.android/build-cache/247c0a0fe4e1a91d8a8418cd2e49c3edf30129c1/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c2deeac83ffa1304264bc755c2ddb84e7a7fa239">
+        <dex dex="/Users/amaresh/Desktop/AmareshWorks/hindnalco/app/build/intermediates/pre-dexed/debug/classes_eb52578269fcfc70f8efd772ba4a4f570588071c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/amaresh/.android/build-cache/7d5f8b0c48fdb3e5ce436712a70e853403a1d62d/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a0e9a3287a988ffd0860c835fb7589e0d43a22eb">
+        <dex dex="/Users/amaresh/Desktop/AmareshWorks/hindnalco/app/build/intermediates/pre-dexed/debug/classes_5776baa2126a49aaf30b67f831d395cb9852bef1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/amaresh/.android/build-cache/f9f5653af6412edaa64c596348475021ada62886/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/amaresh/Desktop/AmareshWorks/hindnalco/app/build/intermediates/pre-dexed/debug/classes_377f3d1f63c99f4b784135afcbcdacc0c1b802c2.jar" />
     </item>
 
 </items>

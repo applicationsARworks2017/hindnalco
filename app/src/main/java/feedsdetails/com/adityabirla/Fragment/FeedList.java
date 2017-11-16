@@ -515,7 +515,7 @@ public class FeedList extends Fragment {
             super.onPostExecute(user);
             loader_feeds.setVisibility(View.GONE);
             if(server_status==1) {
-              //  Collections.reverse(list_visitors);
+               Collections.reverse(fList);
                 fadapter = new FeedAdapter(getContext(), fList);
                 lv_feeds.setAdapter(fadapter);
             }

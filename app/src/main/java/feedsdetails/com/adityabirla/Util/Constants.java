@@ -22,7 +22,9 @@ public class Constants {
     public static String ONLINE_URL="http://applicationworld.net/forum/";
     public  static String LOGIN="users/loginCheck.json";
     public  static String LIKE="likes/add.json";
+    public  static String SHARE="shares/add.json";
     public  static String FEEDS="files/fileList.json";
+    public  static String DOWNLOADS="downloads/add.json";
     public  static String SHAREDPREFERENCE_KEY="hindalco";
     public  static String USER_ID="user_id";
     public  static String FILE_UPLOAD="files/add.json";

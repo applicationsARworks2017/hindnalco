@@ -43,14 +43,21 @@
                 android:visibility="gone"
                 android:scaleType="fitXY"
                 android:layout_below="@id/contentheading"/>
-            <VideoView
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/img1"
                 android:id="@+id/video"
                 android:visibility="gone"
-                android:layout_below="@id/contentheading"/>
+                android:background="@color/deep_background"
+                android:layout_below="@id/contentheading">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:background="@mipmap/ic_play_circle_outline_black_24dp"
+                    android:backgroundTint="@color/black"/>
+            </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
@@ -104,11 +111,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@mipmap/ic_mode_comment_black_24dp"
-                        android:id="@+id/likeim1"/>
+                        android:id="@+id/comment"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/likeim1"
+                        android:layout_below="@id/comment"
                         android:text="242"
                         android:layout_centerHorizontal="true"
                         android:id="@+id/comment_count"
@@ -140,11 +147,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@mipmap/ic_file_download_black_24dp"
-                        android:id="@+id/likeim3"/>
+                        android:id="@+id/download"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/likeim3"
+                        android:layout_below="@id/download"
                         android:layout_centerHorizontal="true"
                         android:id="@+id/download_count"
                         android:textColor="@color/black"/>
