@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import feedsdetails.com.adityabirla.Activity.MapActivity;
 import feedsdetails.com.adityabirla.Activity.SceduleActivity;
 import feedsdetails.com.adityabirla.R;
 
@@ -83,7 +84,8 @@ public class Venue extends Fragment {
         lin_venue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent=new Intent(getActivity(),MapActivity.class);
+                startActivity(intent);
             }
         });
         return v;

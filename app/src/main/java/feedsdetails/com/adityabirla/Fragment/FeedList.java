@@ -26,6 +26,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -90,6 +91,9 @@ public class FeedList extends Fragment {
     MediaController mediaC;
     String file_path;
     RelativeLayout rel_feedlist,activityresult;
+    int page=1,firstVisibleItemCount,total;
+    String scroll_allow="true";
+    Feeds list1 = new Feeds();
 
     int FILE_REQUEST_CODE=001;
     int VIDEO_REQUEST_CODE=002;
@@ -148,11 +152,37 @@ public class FeedList extends Fragment {
             Constants.noInternetDialouge(getActivity(),"No internet");
         }
 
+        lv_feeds.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+               /* if(scroll_allow.contentEquals("true")){
+                    page=page+1;
+                    feedList feeds=new feedList();
+                    feeds.execute(String.valueOf(page));
+
+                }*/
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                if(firstVisibleItemCount>0) {
+                    if (scroll_allow.contentEquals("true") && firstVisibleItemCount == firstVisibleItem) {
+                        page = page + 1;
+                        total = (firstVisibleItem + visibleItemCount)-1;
+                        feedList feeds = new feedList();
+                        feeds.execute(String.valueOf(page));
+                    }
+                }
+
+            }
+        });
         swipe_feeds.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 swipe_feeds.setRefreshing(false);
+                firstVisibleItemCount=0;
                 if(CheckInternet.getNetworkConnectivityStatus(getActivity())){
+                   // fList.clear();
                     getFeeds();
                 }
                 else{
@@ -362,8 +392,9 @@ public class FeedList extends Fragment {
         return Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
     }
     private void getFeeds() {
+        firstVisibleItemCount=0;
         feedList feeds=new feedList();
-        feeds.execute();
+        feeds.execute(String.valueOf(page));
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -404,7 +435,7 @@ public class FeedList extends Fragment {
 
 
             try {
-//                String _page = params[0];
+                String _page = params[0];
                 InputStream in = null;
                 int resCode = -1;
                 String link = Constants.ONLINE_URL + Constants.FEEDS;
@@ -420,7 +451,7 @@ public class FeedList extends Fragment {
                 conn.setRequestMethod("POST");
 
                 Uri.Builder builder = new Uri.Builder()
-                        .appendQueryParameter("page", "");
+                        .appendQueryParameter("page", _page);
 
                 String query = builder.build().getEncodedQuery();
 
@@ -465,26 +496,51 @@ public class FeedList extends Fragment {
             "no_of_downloads": 1,
             "date": "11-11-2017"
         }
+
     ]
+    "Files": {
+        "finder": "all",
+        "page": 1,
+        "current": 10,
+        "count": 13,
+        "perPage": 10,
+        "prevPage": false,
+        "nextPage": true,
+        "pageCount": 2,
+        "sort": "Files.id",
+        "direction": "desc",
+        "limit": null,
+        "sortDefault": "Files.id",
+        "directionDefault": "desc",
+        "scope": null
+    }
                     },*/
 
                 if (response != null && response.length() > 0) {
                     JSONObject res = new JSONObject(response.trim());
                     // server_status=res.getInt("status");
                     JSONArray feedListArray = res.getJSONArray("files");
+                    JSONObject count_obj=res.getJSONObject("Files");
+                    scroll_allow=count_obj.getString("nextPage");
+                    firstVisibleItemCount=firstVisibleItemCount+8;
                     if(feedListArray.length()<=0){
                         server_message="No Feeds Found";
                         server_status=0;
 
                     }
                     else{
-                        fList.clear();
+                       // fList.clear();
                         server_status=1;
                         for (int i = 0; i < feedListArray.length(); i++) {
                             JSONObject o_list_obj = feedListArray.getJSONObject(i);
                             String user_name = o_list_obj.getString("user_name");
                             String user_id = o_list_obj.getString("user_id");
                             String id = o_list_obj.getString("id");
+                            for(int j=1;j<fList.size();j++){
+                                if(id.contentEquals(fList.get(j).getId())){
+                                    fList.remove(j);
+                                }
+                            }
                             String title = o_list_obj.getString("title");
                             String file_type = o_list_obj.getString("file_type");
                             String file_name = o_list_obj.getString("file_name");
@@ -493,7 +549,7 @@ public class FeedList extends Fragment {
                             String no_of_share = o_list_obj.getString("no_of_share");
                             String no_of_downloads = o_list_obj.getString("no_of_downloads");
                             String date = o_list_obj.getString("date");
-                            Feeds list1 = new Feeds(id,user_name,user_id,title,file_type,file_name,no_of_like,no_of_comment,no_of_share,
+                            list1=new Feeds(id,user_name,user_id,title,file_type,file_name,no_of_like,no_of_comment,no_of_share,
                                                     no_of_downloads,date);
                             fList.add(list1);
                         }
@@ -513,16 +569,19 @@ public class FeedList extends Fragment {
         @Override
         protected void onPostExecute(Void user) {
             super.onPostExecute(user);
-            loader_feeds.setVisibility(View.GONE);
             if(server_status==1) {
-               Collections.reverse(fList);
+              // Collections.reverse(fList);
                 fadapter = new FeedAdapter(getContext(), fList);
                 lv_feeds.setAdapter(fadapter);
+                fadapter.notifyDataSetChanged();
+                lv_feeds.setSelection(total);
             }
             else{
                 swipe_feeds.setVisibility(View.GONE);
                 tv_nofeeds.setVisibility(View.VISIBLE);
             }
+            loader_feeds.setVisibility(View.GONE);
+
 
         }
     }

@@ -9,6 +9,7 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true //important
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -36,4 +37,7 @@ dependencies {
     compile 'com.android.support:support-core-utils:25.4.0'
     compile 'com.devbrackets.android:exomedia:4.0.3'
     compile 'com.google.android.exoplayer:exoplayer:r2.5.1'
+    compile 'com.google.android.gms:play-services:8.3.0'
+    compile 'com.google.android.gms:play-services-maps:7.8.0'
+    compile 'com.google.android.gms:play-services-location:7.8.0'
 }

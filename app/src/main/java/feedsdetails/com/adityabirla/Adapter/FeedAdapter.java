@@ -224,6 +224,15 @@ public class FeedAdapter extends BaseAdapter {
             }
         });
 
+        holder.videoView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(_context,VideoPlayer.class);
+                intent.putExtra("PATH",_pos.getFile_name());
+                _context.startActivity(intent);
+            }
+        });
+
 
 
         return convertView;

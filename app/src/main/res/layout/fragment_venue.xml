@@ -78,6 +78,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
+                    android:id="@+id/lin_venue"
                     android:layout_marginRight="20dp"
                     android:orientation="horizontal">
                     <ImageView
@@ -90,7 +91,6 @@
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:id="@+id/lin_venue"
                         android:text="Hindalco Hirakud Auditorium,R S Colony , Sambalpur, Odisha"
                         android:layout_gravity="center_vertical"
                         android:textColor="@color/indigo"

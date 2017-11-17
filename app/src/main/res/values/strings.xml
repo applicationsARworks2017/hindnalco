@@ -3,4 +3,38 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="back"><![CDATA[<]]></string>
+    <string name="rewind"><![CDATA[<<]]></string>
+    <string name="forward"><![CDATA[>>]]></string>
+    <string name="pause">||</string>
+    <string name="num1">Inauguration,Bouquet Presentation to Guests,Aditya Vandana,Welcome address by  Mr Arun Poddar,Address by Mr S K Gur, Address by Mr Samik Basu,Address by Mr R K Gupta,Address by MD Mr Satish Pai,Vote of Thanks by Mr Arun Kumar Singh</string>
+    <string name="num2">8 Papers  (Safety, Environment, Renewable Energy, Waste Utilisation, Coal &amp; HMF).</string>
+    <string name="num3">Safety &amp; Operational Discipline : <font color="#0D47A1"><b><i>Mr Sunil Bailwar,Head Safety,Metal Business</i></b></font></string>
+    <string name="num4">Safety norms followed in Power Plant Safety : <font color="#0D47A1"><b><i>DY. Dir- Mr Malay Pradhan, Directorate Office Government of Odisha</i></b></font></string>
+    <string name="num5">Technological Advancement  in Powerplant Environment Management : <font color="#0D47A1"><b><i> Mr Dilip Dash,RO,SPCB,Govt.of Odisha</i></b></font></string>
+    <string name="num6">Emerging Renewable Energy Sources &amp; Emerging Technologies :<font color="#0D47A1"><b><i>Mr D Ghosh,Corporate Technology</i></b></font></string>
+    <string name="num7">NOx &amp; SOx Reduction Techniques for Pulversied Coal Fired Thermal Power Plants : <font color="#0D47A1"><b><i>Mr S Dash &amp; Mr Srinivasu Arugula,BHEL</i></b></font></string>
+    <string name="num8">Know Your Coal before you Push to Boiler : <font color="#0D47A1"><b><i>Mr P.K.Banerjee,CTO,Corporate Technology</i></b></font></string>
+    <string name="num9">Dry Benificiation of Coal : <font color="#0D47A1"><b><i>Mr Akhaya Chaturvedi &amp; Dr. Ramana Goda, Surya Kshamta Pvt. Ltd</i></b></font></string>
+    <string name="num10">Journey of HMF and Documentation for the Power Stream:<font color="#0D47A1"><b><i>Mr. Debashis Ghosh, Head Business Transformation,Mr. S K Guru,Head CPP,Aditya, Mr. Dileeph KV, Jt President Business Transformation</i></b></font></string>
+    <string name="num11">5  Papers (Fly ash Utilisation, Ash Dyke Strengthening, CFD, Digitisation, Alternate Fuels).</string>
+    <string name="num12">JInnovative Application of Reinforced Soil Technlogy : <font color="#0D47A1"><b><i>Mr Shahrokh Bagli ,Strata Geosystem India Pvt Ltd,Mumbai</i></b></font></string>
+    <string name="num13">Innovative Application of Reinforced Soil Technlogy : <font color="#0D47A1"><b><i>Prof. A.Ghosh Director (Technical), Prof. &amp; Head Civil Engg. Dept,Moradabad Institute of Technology</i></b></font></string>
+    <string name="num14">CFD &amp; Application to Power Industry : <font color="#0D47A1"><b><i>Prof. Sukanta K Dash,IIT Kharagpur </i></b></font></string>
+    <string name="num15">Digitisation in Hindalco : <font color="#0D47A1"><b><i>Mr Jagdish Ramaswamy, CDO , Corporate IT</i></b></font></string>
+    <string name="num16">Best  Practices in  O &amp; M of Dahej Power : <font color="#0D47A1"><b><i>Mr  Rajpal Goswami, Mr  Sunny Bharadwaj, Mr Deepak Pandey, Mr Surendra Ram </i></b></font></string>
+    <string name="num17">Overview of Power  Quality  &amp; Harmonics : <font color="#0D47A1"><b><i>Dr.S.Parthasaraty,K.L.N College of Engineering, Pottapalayam </i></b></font></string>
+    <string name="num18">Simulation of Power Plant Performance - Enablon Software :  <font color="#0D47A1"><b><i>Mr Sudarshan Goyal &amp; Mr Rashid Shaikh,CTES,ABMCPL </i></b></font></string>
+    <string name="num19">Intelligent Tranformer Management :  <font color="#0D47A1"><b><i>Mr. Divyansh Kohli , NDL Power Limited</i></b></font></string>
+    <string name="num20">Modern Technology Trend in EHV &amp; UHV Substation :  <font color="#0D47A1"><b><i>Mr Nihar S Raj ,ABB</i></b></font></string>
+    <string name="num21">Optical EHV Current Transformers : <font color="#0D47A1"><b><i>Mr Satyabrata Das ,GE</i></b></font></string>
+    <string name="num22">Reduction of Flue Gas Temperature : <font color="#0D47A1"><b><i>Mr Pavan K Ravulaparthy, Lungstrom </i></b></font></string>
+    <string name="num23">Best Practices in O &amp; M of Mahan CPP - 3 Papers : <font color="#0D47A1"><b><i>Mr P .K Verma/Mr Supravat Roychowdhury,Mr Vijay Sharma/ Mr A.N Chaturved</i></b></font></string>
+    <string name="num24">Best Practices in O &amp; M of Renusagar CPP-2 Papers : <font color="#0D47A1"><b><i>Mr Sanoj Kumar  &amp;   Mr Animesh Kumar</i></b></font></string>
+    <string name="num25">Best Practices in O &amp; M of  Renukoot CGPP- 1Paper : <font color="#0D47A1"><b><i>Mr Dinesh Pandey</i></b></font></string>
+    <string name="num26">Best Practices in O &amp; M of  Utkal CGPP<font color="#0D47A1"><b><i>1 Paper:Mr Girish Choudhary  /Mr Debi Pattnaik / Mr Ashish Maharana /Mr Alladi Narendra Babu/Mr S Pratik</i></b></font></string>
+    <string name="num27">Best Practices in  O &amp; M of  Hirakud CPP &amp; Rectifier -4 Papers:<font color="#0D47A1"><b><i>Team Hirakud</i></b></font></string>
+    <string name="num28">Best Practices in  O &amp; M of  Aditya CPP &amp; Rectifier -1 Paper : <font color="#0D47A1"><b><i>Team Aditya</i></b></font></string>
+
+
 </resources>

@@ -8,6 +8,10 @@ public class Feeds {
     String id,user_name,user_id,title,file_type,file_name,no_of_like,no_of_comment,no_of_share,
             no_of_downloads,date;
 
+    public Feeds() {
+
+    }
+
     public String getId() {
         return id;
     }

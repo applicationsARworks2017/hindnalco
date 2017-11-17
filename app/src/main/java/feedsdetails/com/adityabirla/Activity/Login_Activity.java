@@ -45,7 +45,7 @@ public class Login_Activity extends AppCompatActivity {
     ArrayList<User> userlist;
     ProgressBar loader_login;
     String[] PERMISSIONS = {Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE,
-            Manifest.permission.CAMERA};
+            Manifest.permission.CAMERA,Manifest.permission.CAMERA,Manifest.permission.ACCESS_COARSE_LOCATION,Manifest.permission.ACCESS_FINE_LOCATION};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
