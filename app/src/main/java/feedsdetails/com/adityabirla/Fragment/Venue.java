@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 
 import feedsdetails.com.adityabirla.Activity.MapActivity;
 import feedsdetails.com.adityabirla.Activity.SceduleActivity;
+import feedsdetails.com.adityabirla.Activity.VideoPlayer;
 import feedsdetails.com.adityabirla.R;
 
 /**
@@ -32,7 +33,7 @@ public class Venue extends Fragment {
     private String mParam1;
     private String mParam2;
     LinearLayout lin_schedule;
-    LinearLayout lin_venue;
+    LinearLayout lin_venue,lin_md;
 
     private OnFragmentInteractionListener mListener;
 
@@ -74,6 +75,7 @@ public class Venue extends Fragment {
         View v =inflater.inflate(R.layout.fragment_venue, container, false);
         lin_schedule=(LinearLayout)v.findViewById(R.id.lin_schedule);
         lin_venue=(LinearLayout)v.findViewById(R.id.lin_venue);
+        lin_md=(LinearLayout)v.findViewById(R.id.lin_md);
         lin_schedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,6 +87,14 @@ public class Venue extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(getActivity(),MapActivity.class);
+                startActivity(intent);
+            }
+        });
+        lin_md.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), VideoPlayer.class);
+                intent.putExtra("PATH","http://applicationworld.net/forum/files/mdSpeech.mp4");
                 startActivity(intent);
             }
         });

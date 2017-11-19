@@ -77,6 +77,7 @@ public class FeedList extends Fragment {
     SwipeRefreshLayout swipe_feeds;
     ListView lv_feeds;
     TextView tv_nofeeds;
+    RelativeLayout rel_file;
     ProgressBar loader_feeds,loader_file;
     String server_message;
     ArrayList<Feeds> fList;
@@ -87,7 +88,7 @@ public class FeedList extends Fragment {
     Button submit_file;
     String file_type,user_id,server_response;
     int server_status;
-    File imageFile,videofile;
+    File imageFile,videofile,doc_file;
     MediaController mediaC;
     String file_path;
     RelativeLayout rel_feedlist,activityresult;
@@ -144,12 +145,14 @@ public class FeedList extends Fragment {
         iv_selected_image=(ImageView)v.findViewById(R.id.iv_selected_image);
         activityresult=(RelativeLayout)v.findViewById(R.id.activityresult);
         rel_feedlist=(RelativeLayout)v.findViewById(R.id.rel_feedlist);
+        rel_file=(RelativeLayout)v.findViewById(R.id.rel_file);
         fList=new ArrayList<>();
-        if(CheckInternet.getNetworkConnectivityStatus(getActivity())){
-            getFeeds();
-        }
-        else{
-            Constants.noInternetDialouge(getActivity(),"No internet");
+        if(savedInstanceState==null) {
+            if (CheckInternet.getNetworkConnectivityStatus(getActivity())) {
+                getFeeds();
+            } else {
+                Constants.noInternetDialouge(getActivity(), "No internet");
+            }
         }
 
         lv_feeds.setOnScrollListener(new AbsListView.OnScrollListener() {
@@ -181,6 +184,7 @@ public class FeedList extends Fragment {
             public void onRefresh() {
                 swipe_feeds.setRefreshing(false);
                 firstVisibleItemCount=0;
+                total=0;
                 if(CheckInternet.getNetworkConnectivityStatus(getActivity())){
                    // fList.clear();
                     getFeeds();
@@ -248,11 +252,21 @@ public class FeedList extends Fragment {
                             Constants.noInternetDialouge(getActivity(), "No internet");
                         }
                     }
-                    else{
+                    else if(file_type.contentEquals("video")){
                         if (CheckInternet.getNetworkConnectivityStatus(getActivity())) {
                                 String title = et_contentheading.getText().toString().trim();
                                 FileUpload fileUpload = new FileUpload();
                                 fileUpload.execute(user_id, file_type, title);
+
+                        } else {
+                            Constants.noInternetDialouge(getActivity(), "No internet");
+                        }
+                    }
+                    else{
+                        if (CheckInternet.getNetworkConnectivityStatus(getActivity())) {
+                            String title = et_contentheading.getText().toString().trim();
+                            FileUpload fileUpload = new FileUpload();
+                            fileUpload.execute(user_id, file_type, title);
 
                         } else {
                             Constants.noInternetDialouge(getActivity(), "No internet");
@@ -330,6 +344,17 @@ public class FeedList extends Fragment {
             {
                 ex.printStackTrace();
             }
+
+        }
+        else if(requestCode==FILE_REQUEST_CODE && resultCode == RESULT_OK && null != data){
+            Uri selectedfile = data.getData();
+            file_path=Getpath.getPath(getActivity(),selectedfile);
+            rel_feedlist.setVisibility(View.GONE);
+            activityresult.setVisibility(View.VISIBLE);
+            iv_selected_image.setVisibility(View.GONE);
+            rel_file.setVisibility(View.VISIBLE);
+            doc_file=new File(file_path);
+            file_type="docs";
 
         }
 
@@ -631,9 +656,14 @@ public class FeedList extends Fragment {
                         multipart.addFilePart("file_name", imageFile);
                     }
                 }
-                else{
+                else if(file_type.contentEquals("video")){
                     if (videofile != null) {
                         multipart.addFilePart("file_name", videofile);
+                    }
+                }
+                else{
+                    if (doc_file != null) {
+                        multipart.addFilePart("file_name", doc_file);
                     }
                 }
                 List<String> response = multipart.finish();

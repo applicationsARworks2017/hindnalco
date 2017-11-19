@@ -12,4 +12,6 @@
     <color name="black">	#000000</color>
     <color name="blue">	#0D47A1</color>
     <color name="indigo">	#42A5F5</color>
+    <color name="btn_orange">#f96e3a</color>
+
 </resources>

@@ -43,6 +43,8 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Random;
 
+import feedsdetails.com.adityabirla.Activity.CommentsActivity;
+import feedsdetails.com.adityabirla.Activity.FileView;
 import feedsdetails.com.adityabirla.Activity.VideoPlayer;
 import feedsdetails.com.adityabirla.Pojo.Feeds;
 import feedsdetails.com.adityabirla.R;
@@ -112,6 +114,7 @@ public class FeedAdapter extends BaseAdapter {
             holder.im_commnet=(ImageView)convertView.findViewById(R.id.comment);
             holder.videoView=(RelativeLayout) convertView.findViewById(R.id.video);
             holder.shareim=(ImageView)convertView.findViewById(R.id.shareim);
+            holder.fileview=(RelativeLayout)convertView.findViewById(R.id.file);
             convertView.setTag(holder);
         }
         else{
@@ -128,11 +131,14 @@ public class FeedAdapter extends BaseAdapter {
         holder.shareim.setTag(holder);
         holder.im_commnet.setTag(holder);
         holder.im_download.setTag(holder);
+        holder.fileview.setTag(position);
         holder.videoView.setTag(position);
         holder.iv_image.setTag(position);
         if(_pos.getFile_type().contentEquals("image")) {
             holder.iv_image.setVisibility(View.VISIBLE);
             holder.videoView.setVisibility(View.GONE);
+            holder.fileview.setVisibility(View.GONE);
+
             if (!_pos.getFile_name().isEmpty()) {
                 Picasso.with(_context).load(_pos.getFile_name()).into(holder.iv_image);
             }
@@ -140,15 +146,15 @@ public class FeedAdapter extends BaseAdapter {
         if(_pos.getFile_type().contentEquals("video")){
             holder.iv_image.setVisibility(View.GONE);
             holder.videoView.setVisibility(View.VISIBLE);
-            holder.videoView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    /*Intent intent=new Intent(_context,VideoPlayer.class);
-                    intent.putExtra("PATH",_pos.getFile_name());
-                    _context.startActivity(intent);*/
-                }
-            });
+            holder.fileview.setVisibility(View.GONE);
+
         }
+        if(_pos.getFile_type().contentEquals("docs")){
+            holder.iv_image.setVisibility(View.GONE);
+            holder.videoView.setVisibility(View.GONE);
+            holder.fileview.setVisibility(View.VISIBLE);
+        }
+
         holder.name.setText(_pos.getUser_name());
         holder.time.setText(_pos.getDate());
         holder.contentheading.setText(_pos.getTitle());
@@ -233,6 +239,23 @@ public class FeedAdapter extends BaseAdapter {
             }
         });
 
+        holder.fileview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(_context,FileView.class);
+                intent.putExtra("PATH",_pos.getFile_name());
+                _context.startActivity(intent);
+            }
+        });
+        holder.im_commnet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(_context,CommentsActivity.class);
+                intent.putExtra("FILEID",_pos.getId());
+                _context.startActivity(intent);
+            }
+        });
+
 
 
         return convertView;
@@ -262,7 +285,11 @@ public class FeedAdapter extends BaseAdapter {
                 }
                 if(file_type.contentEquals("video")){
                     targetFileName=getSaltString()+".mp4";
-                }                int lenghtOfFile = conexion.getContentLength();
+                }
+                if(file_type.contentEquals("docs")){
+                    targetFileName=getSaltString()+new_wordd;
+                }
+                int lenghtOfFile = conexion.getContentLength();
                 IPATH = Environment.getExternalStorageDirectory() + "/" + "hindalco" + "/";
                 File folder = new File(IPATH);
                 if (!folder.exists()) {

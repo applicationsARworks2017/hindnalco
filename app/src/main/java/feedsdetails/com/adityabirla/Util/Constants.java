@@ -28,6 +28,8 @@ public class Constants {
     public  static String SHAREDPREFERENCE_KEY="hindalco";
     public  static String USER_ID="user_id";
     public  static String FILE_UPLOAD="files/add.json";
+    public  static String COMMENTS="comments/add.json";
+    public  static String COMMENT_LIST="comments/commentList";
 
     public static boolean hasPermissions(Context context, String... permissions) {
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null && permissions != null) {
