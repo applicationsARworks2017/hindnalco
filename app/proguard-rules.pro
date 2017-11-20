@@ -4,6 +4,7 @@
 # You can edit the include path and order by changing the proguardFiles
 # directive in build.gradle.
 #
+-dontwarn com.squareup.okhttp.**
 # For more details, see
 #   http://developer.android.com/guide/developing/tools/proguard.html
 
