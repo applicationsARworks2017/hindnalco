@@ -42,12 +42,14 @@
             android:name=".Activity.HomeActivity"
             android:label="Home"
             android:screenOrientation="portrait" />
-        <activity android:name=".Activity.VideoPlayer" />
+        <activity android:name=".Activity.VideoPlayer"
+            android:label="MD's Voice"/>
         <activity
             android:name=".Activity.SceduleActivity"
             android:label="Program Schedule" />
         <activity android:name=".Activity.MapActivity" />
-        <activity android:name=".Activity.FileView" />
+        <activity android:name=".Activity.FileView"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity android:name=".Activity.CommentsActivity"
             android:label="Comments"></activity>
     </application>

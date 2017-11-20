@@ -66,12 +66,25 @@ public class FeedAdapter extends BaseAdapter {
     String filetype;
     String file_type;
     String IPATH=null;
+    String message ;
+
+
     public FeedAdapter(Context context, ArrayList<Feeds> fList) {
         this._context=context;
         this.new_list=fList;
     }
 
+    @Override
+    public int getViewTypeCount() {
 
+        return getCount();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+
+        return position;
+    }
     @Override
     public int getCount() {
         return new_list.size();
@@ -89,7 +102,8 @@ public class FeedAdapter extends BaseAdapter {
     private class Holder{
         TextView name,time,contentheading,like_count,comment_count,share_count,download_count;
         ImageView iv_image,likeim,shareim,im_download,im_commnet;
-        RelativeLayout videoView;
+        RelativeLayout videoView,questions;
+        TextView questions_desc;
         RelativeLayout fileview;
     }
 
@@ -115,6 +129,8 @@ public class FeedAdapter extends BaseAdapter {
             holder.videoView=(RelativeLayout) convertView.findViewById(R.id.video);
             holder.shareim=(ImageView)convertView.findViewById(R.id.shareim);
             holder.fileview=(RelativeLayout)convertView.findViewById(R.id.file);
+            holder.questions=(RelativeLayout)convertView.findViewById(R.id.questions);
+            holder.questions_desc=(TextView)convertView.findViewById(R.id.question_desc);
             convertView.setTag(holder);
         }
         else{
@@ -134,10 +150,15 @@ public class FeedAdapter extends BaseAdapter {
         holder.fileview.setTag(position);
         holder.videoView.setTag(position);
         holder.iv_image.setTag(position);
+        holder.questions.setTag(position);
+        holder.questions_desc.setTag(position);
+
         if(_pos.getFile_type().contentEquals("image")) {
             holder.iv_image.setVisibility(View.VISIBLE);
             holder.videoView.setVisibility(View.GONE);
             holder.fileview.setVisibility(View.GONE);
+            holder.questions.setVisibility(View.GONE);
+
 
             if (!_pos.getFile_name().isEmpty()) {
                 Picasso.with(_context).load(_pos.getFile_name()).into(holder.iv_image);
@@ -147,15 +168,29 @@ public class FeedAdapter extends BaseAdapter {
             holder.iv_image.setVisibility(View.GONE);
             holder.videoView.setVisibility(View.VISIBLE);
             holder.fileview.setVisibility(View.GONE);
+            holder.questions.setVisibility(View.GONE);
+
 
         }
         if(_pos.getFile_type().contentEquals("docs")){
             holder.iv_image.setVisibility(View.GONE);
             holder.videoView.setVisibility(View.GONE);
             holder.fileview.setVisibility(View.VISIBLE);
+            holder.questions.setVisibility(View.GONE);
+
+        }
+        if(_pos.getFile_type().contentEquals("question")){
+            holder.iv_image.setVisibility(View.GONE);
+            holder.videoView.setVisibility(View.GONE);
+            holder.fileview.setVisibility(View.GONE);
+            holder.questions.setVisibility(View.VISIBLE);
+            holder.im_download.setVisibility(View.GONE);
+            holder.download_count.setVisibility(View.GONE);
         }
 
+
         holder.name.setText(_pos.getUser_name());
+        holder.questions_desc.setText(_pos.getDescription());
         holder.time.setText(_pos.getDate());
         holder.contentheading.setText(_pos.getTitle());
         holder.like_count.setText(_pos.getNo_of_like());
@@ -186,7 +221,12 @@ public class FeedAdapter extends BaseAdapter {
             public void onClick(View v) {
                 holder1=(Holder)v.getTag();
                 mp.start();
-                String message = _pos.getTitle()+" . "+"Please click to get the file : "+_pos.getFile_name();
+                if(_pos.getFile_type().contentEquals("question")){
+                    message=_pos.getTitle()+":"+_pos.getDescription();
+                }
+                else{
+                    message   = _pos.getTitle()+" . "+"Please click to get the file : "+_pos.getFile_name();
+                }
                 Intent share = new Intent(Intent.ACTION_SEND);
                 share.setType("text/plain");
                 share.putExtra(Intent.EXTRA_TEXT, message);

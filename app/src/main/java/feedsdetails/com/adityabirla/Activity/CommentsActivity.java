@@ -51,6 +51,7 @@ public class CommentsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comments);
+        cList=new ArrayList<>();
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             file_id = extras.getString("FILEID");
@@ -78,6 +79,21 @@ public class CommentsActivity extends AppCompatActivity {
                         Constants.noInternetDialouge(CommentsActivity.this,"No Internet");
 
                     }
+                }
+            }
+        });
+        swipecomments.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                cList.clear();
+                if(CheckInternet.getNetworkConnectivityStatus(CommentsActivity.this)) {
+                    swipecomments.setRefreshing(false);
+                    CommentList comentlist = new CommentList();
+                    comentlist.execute(String.valueOf(file_id));
+                }
+                else{
+                    Constants.noInternetDialouge(CommentsActivity.this,"No Internet");
+
                 }
             }
         });
@@ -191,6 +207,8 @@ public class CommentsActivity extends AppCompatActivity {
             Toast.makeText(CommentsActivity.this,server_message,Toast.LENGTH_SHORT).show();
             if(server_status==1){
                 et_comments.setText("");
+                CommentList comentlist = new CommentList();
+                comentlist.execute(String.valueOf(file_id));
             }
 
         }
@@ -277,7 +295,7 @@ public class CommentsActivity extends AppCompatActivity {
             "comment": "hello",
             "date": "19-11-2017 02:40 AM"
         },
-* */            cList=new ArrayList<>();
+* */
                 if (response != null && response.length() > 0) {
                     JSONObject res = new JSONObject(response.trim());
                     // server_status=res.getInt("status");
@@ -321,6 +339,8 @@ public class CommentsActivity extends AppCompatActivity {
                 // Collections.reverse(fList);
                 commentsAdapter = new CommentsAdapter(CommentsActivity.this, cList);
                 lv_comments.setAdapter(commentsAdapter);
+                lv_comments.setSelection(cList.size()-1);
+
             }
             else{
                 swipecomments.setVisibility(View.GONE);

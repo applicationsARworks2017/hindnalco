@@ -54,15 +54,23 @@ public class CommentsAdapter extends BaseAdapter {
                     .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
             convertView = mInflater.inflate(R.layout.activity_comments_adapter, parent, false);
             holder.name=(TextView)convertView.findViewById(R.id.name);
-           // holder.time=(TextView)convertView.findViewById(R.id.d);
+            holder.time=(TextView)convertView.findViewById(R.id.date);
             holder.comments=(TextView)convertView.findViewById(R.id.cmt_text);
             convertView.setTag(holder);
         }
         else{
             holder = (Holder) convertView.getTag();
         }
-        holder.name.setTag(holder);
-        holder.comments.setTag(holder);
+        holder.name.setTag(position);
+        holder.time.setTag(position);
+        holder.comments.setTag(position);
+
+        holder.name.setText(_pos.getUser_name());
+        holder.time.setText(_pos.getDate());
+        holder.comments.setText(_pos.getComment());
+
+
+
         return convertView;
     }
 }

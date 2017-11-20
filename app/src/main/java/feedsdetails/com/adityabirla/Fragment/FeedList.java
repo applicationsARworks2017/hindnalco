@@ -73,7 +73,7 @@ public class FeedList extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    com.github.clans.fab.FloatingActionButton add_files,add_video,add_images;
+    com.github.clans.fab.FloatingActionButton add_files,add_video,add_images,add_questions;
     SwipeRefreshLayout swipe_feeds;
     ListView lv_feeds;
     TextView tv_nofeeds;
@@ -84,13 +84,15 @@ public class FeedList extends Fragment {
     FeedAdapter fadapter;
     ImageView iv_selected_image;
     VideoView vv_selectedvideo;
-    EditText et_contentheading;
+    EditText et_contentheading,et_question;
     Button submit_file;
     String file_type,user_id,server_response;
     int server_status;
     File imageFile,videofile,doc_file;
     MediaController mediaC;
     String file_path;
+    String question;
+    File blanck=new File("");
     RelativeLayout rel_feedlist,activityresult;
     int page=1,firstVisibleItemCount,total;
     String scroll_allow="true";
@@ -141,6 +143,7 @@ public class FeedList extends Fragment {
         loader_feeds.setVisibility(View.GONE);
         vv_selectedvideo=(VideoView)v.findViewById(R.id.vv_selectedvideo);
         et_contentheading=(EditText)v.findViewById(R.id.et_contentheading);
+        et_question=(EditText)v.findViewById(R.id.et_question);
         submit_file=(Button)v.findViewById(R.id.submit_file);
         iv_selected_image=(ImageView)v.findViewById(R.id.iv_selected_image);
         activityresult=(RelativeLayout)v.findViewById(R.id.activityresult);
@@ -198,6 +201,7 @@ public class FeedList extends Fragment {
         add_files=(com.github.clans.fab.FloatingActionButton)v.findViewById(R.id.add_files);
         add_video=(com.github.clans.fab.FloatingActionButton)v.findViewById(R.id.add_video);
         add_images=(com.github.clans.fab.FloatingActionButton)v.findViewById(R.id.add_images);
+        add_questions=(com.github.clans.fab.FloatingActionButton)v.findViewById(R.id.add_questions);
         add_files.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -227,6 +231,20 @@ public class FeedList extends Fragment {
                 startActivityForResult(mediaChooser, IMAGE_REQUEST_CODE);
             }
         });
+        add_questions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rel_feedlist.setVisibility(View.GONE);
+                activityresult.setVisibility(View.VISIBLE);
+                iv_selected_image.setVisibility(View.GONE);
+                vv_selectedvideo.setVisibility(View.GONE);
+                et_question.setVisibility(View.VISIBLE);
+                rel_file.setVisibility(View.GONE);
+                file_type="question";
+
+
+            }
+        });
         submit_file.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -234,7 +252,7 @@ public class FeedList extends Fragment {
                     showSnackBar("Please select file ");
 
                 }
-                else if(et_contentheading.getText().toString().trim().length()<=0){
+                else if(et_contentheading.getText().toString().trim().length()<=0 && !file_type.contentEquals("question")){
                     showSnackBar("Please give the comment");
 
                 }
@@ -262,12 +280,25 @@ public class FeedList extends Fragment {
                             Constants.noInternetDialouge(getActivity(), "No internet");
                         }
                     }
-                    else{
+                    else if(file_type.contentEquals("docs")){
                         if (CheckInternet.getNetworkConnectivityStatus(getActivity())) {
                             String title = et_contentheading.getText().toString().trim();
                             FileUpload fileUpload = new FileUpload();
                             fileUpload.execute(user_id, file_type, title);
 
+                        } else {
+                            Constants.noInternetDialouge(getActivity(), "No internet");
+                        }
+                    }
+                    else{
+                        if (CheckInternet.getNetworkConnectivityStatus(getActivity())) {
+                            String title = et_contentheading.getText().toString().trim();
+                            if(et_contentheading.getText().toString().trim().length()<=0){
+                                title=" ";
+                            }
+                             question = et_question.getText().toString().trim();
+                            FileUpload fileUpload = new FileUpload();
+                            fileUpload.execute(user_id, file_type, title);
                         } else {
                             Constants.noInternetDialouge(getActivity(), "No internet");
                         }
@@ -573,9 +604,10 @@ public class FeedList extends Fragment {
                             String no_of_comment = o_list_obj.getString("no_of_comment");
                             String no_of_share = o_list_obj.getString("no_of_share");
                             String no_of_downloads = o_list_obj.getString("no_of_downloads");
+                            String description=o_list_obj.getString("description");
                             String date = o_list_obj.getString("date");
                             list1=new Feeds(id,user_name,user_id,title,file_type,file_name,no_of_like,no_of_comment,no_of_share,
-                                                    no_of_downloads,date);
+                                                    no_of_downloads,date,description);
                             fList.add(list1);
                         }
                     }
@@ -649,6 +681,7 @@ public class FeedList extends Fragment {
                 multipart.addFormField("user_id", _user_id);
                 multipart.addFormField("file_type", _file_type);
                 multipart.addFormField("title", _title);
+                multipart.addFormField("description", question);
 
                 // after completion of image work please enable this
                 if(file_type.contentEquals("image")) {
@@ -661,7 +694,7 @@ public class FeedList extends Fragment {
                         multipart.addFilePart("file_name", videofile);
                     }
                 }
-                else{
+                else if(file_type.contentEquals("docs")){
                     if (doc_file != null) {
                         multipart.addFilePart("file_name", doc_file);
                     }
@@ -713,6 +746,115 @@ public class FeedList extends Fragment {
             Toast.makeText(getActivity(),server_response,Toast.LENGTH_SHORT).show();
         }
     }
+   /* private class Question extends AsyncTask<String, Void, Void> {
+
+        private static final String TAG = "Comments Sync";
+        String server_message;
+        String id,username,email_address,contact_no;
+        int server_status;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            // onPreExecuteTask();
+        }
+//user_id, file_type, title,question
+        @Override
+        protected Void doInBackground(String... params) {
+
+            try {
+                String _user_id = params[0];
+                String _file_type = params[1];
+                String _text = params[2];
+                String _question = params[3];
+                InputStream in = null;
+                int resCode = -1;
+
+                String link =Constants.ONLINE_URL+ Constants.COMMENTS ;
+                URL url = new URL(link);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setReadTimeout(10000);
+                conn.setConnectTimeout(15000);
+                conn.setRequestMethod("POST");
+                conn.setDoInput(true);
+                conn.setDoOutput(true);
+                conn.setAllowUserInteraction(false);
+                conn.setInstanceFollowRedirects(true);
+                conn.setRequestMethod("POST");
+
+                Uri.Builder builder = new Uri.Builder()
+                        .appendQueryParameter("user_id", _user_id)
+                        .appendQueryParameter("file_type",file_type )
+                        .appendQueryParameter("comment", _text);
+
+                //.appendQueryParameter("deviceid", deviceid);
+                String query = builder.build().getEncodedQuery();
+
+                OutputStream os = conn.getOutputStream();
+                BufferedWriter writer = new BufferedWriter(
+                        new OutputStreamWriter(os, "UTF-8"));
+                writer.write(query);
+                writer.flush();
+                writer.close();
+                os.close();
+
+                conn.connect();
+                resCode = conn.getResponseCode();
+                if (resCode == HttpURLConnection.HTTP_OK) {
+                    in = conn.getInputStream();
+                }
+                if (in == null) {
+                    return null;
+                }
+                BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
+                String response = "", data = "";
+
+                while ((data = reader.readLine()) != null) {
+                    response += data + "\n";
+                }
+
+                Log.i(TAG, "Response : " + response);
+
+                *//**
+                 * {
+                 "res": {
+                 "message": "File liked has been saved.",
+                 "status": 1
+                 }
+                 }
+                 * *//*
+
+                if (response != null && response.length() > 0) {
+                    JSONObject res = new JSONObject(response.trim());
+                    JSONObject j_obj=res.getJSONObject("res");
+                    server_status = j_obj.optInt("status");
+                    if (server_status == 1) {
+                        server_message="Success";
+                    } else {
+                        server_message = "Error";
+                    }
+                }
+                return null;
+            } catch (Exception exception) {
+                server_message = "Network Error";
+                Log.e(TAG, "SynchMobnum : doInBackground", exception);
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void user) {
+            super.onPostExecute(user);
+            Toast.makeText(CommentsActivity.this,server_message,Toast.LENGTH_SHORT).show();
+            if(server_status==1){
+                et_comments.setText("");
+                CommentList comentlist = new CommentList();
+                comentlist.execute(String.valueOf(file_id));
+            }
+
+        }
+    }*/
 
 
 

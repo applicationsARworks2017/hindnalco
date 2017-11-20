@@ -6,7 +6,7 @@ package feedsdetails.com.adityabirla.Pojo;
 
 public class Feeds {
     String id,user_name,user_id,title,file_type,file_name,no_of_like,no_of_comment,no_of_share,
-            no_of_downloads,date;
+            no_of_downloads,date,description;
 
     public Feeds() {
 
@@ -100,8 +100,16 @@ public class Feeds {
         this.date = date;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public Feeds(String id, String user_name, String user_id, String title, String file_type, String file_name,
-                 String no_of_like, String no_of_comment, String no_of_share, String no_of_downloads, String date) {
+                 String no_of_like, String no_of_comment, String no_of_share, String no_of_downloads, String date, String description) {
         this.id=id;
         this.user_id=user_id;
         this.user_name=user_name;
@@ -113,6 +121,8 @@ public class Feeds {
         this.no_of_share=no_of_share;
         this.no_of_downloads=no_of_downloads;
         this.date=date;
+        this.description=description;
+
 
 
     }
