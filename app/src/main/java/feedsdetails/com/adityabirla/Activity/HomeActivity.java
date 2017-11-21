@@ -86,8 +86,15 @@ public class HomeActivity extends AppCompatActivity {
     }
     private void updateToolbarText(CharSequence text) {
         ActionBar actionBar = getSupportActionBar();
+
         if (actionBar != null) {
-            actionBar.setTitle(text);
+            if(text.toString().contentEquals("Venue")){
+                actionBar.setTitle("Hindalco Industries Limited, Hirakud");
+
+            }
+            else {
+                actionBar.setTitle(text);
+            }
         }
     }
     @Override

@@ -81,7 +81,8 @@ public class Venue extends Fragment {
         lin_schedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getActivity(),SceduleActivity.class);
+                Intent intent=new Intent(getActivity(), FileView.class);
+                intent.putExtra("PATH","http://applicationworld.net/forum/files/schedule.pdf");
                 startActivity(intent);
             }
         });

@@ -457,11 +457,17 @@ public class FeedAdapter extends BaseAdapter {
                     JSONObject res = new JSONObject(response.trim());
                     JSONObject j_obj=res.getJSONObject("res");
                     server_status = j_obj.optInt("status");
-                    if (server_status == 1) {
+                    if (server_status == 1 ) {
                         server_message="Liked";
-                    } else {
+                    }
+                    else if(server_status==2){
+                        server_message = "Already Liked";
+
+                    }
+                    else  {
                         server_message = "Error";
                     }
+
                 }
                 return null;
             } catch (Exception exception) {
@@ -476,7 +482,9 @@ public class FeedAdapter extends BaseAdapter {
         protected void onPostExecute(Void user) {
             super.onPostExecute(user);
             Toast.makeText(_context,server_message,Toast.LENGTH_SHORT).show();
-            holder1.like_count.setText(String.valueOf(likecount+1));
+            if(server_status==1) {
+                holder1.like_count.setText(String.valueOf(likecount + 1));
+            }
 
         }
     }

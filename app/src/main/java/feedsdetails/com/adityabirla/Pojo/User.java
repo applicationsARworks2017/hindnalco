@@ -7,6 +7,10 @@ package feedsdetails.com.adityabirla.Pojo;
 public class User {
     String id,username,email_address,contact_no;
 
+    public User() {
+
+    }
+
     public String getId() {
         return id;
     }

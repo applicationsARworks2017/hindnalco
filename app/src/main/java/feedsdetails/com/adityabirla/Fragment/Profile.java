@@ -1,14 +1,24 @@
 package feedsdetails.com.adityabirla.Fragment;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
+import feedsdetails.com.adityabirla.Activity.Login_Activity;
+import feedsdetails.com.adityabirla.Pojo.User;
 import feedsdetails.com.adityabirla.R;
+import feedsdetails.com.adityabirla.SplashScreen;
+import feedsdetails.com.adityabirla.Util.Constants;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +33,9 @@ public class Profile extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    TextView name,mobile;
+    Button logout;
+    String mobile_num,user_name;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -65,7 +78,49 @@ public class Profile extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        View v= inflater.inflate(R.layout.fragment_profile, container, false);
+        name=(TextView)v.findViewById(R.id.name);
+        mobile=(TextView)v.findViewById(R.id.mobile);
+        logout=(Button) v.findViewById(R.id.logout);
+        mobile_num = getActivity().getSharedPreferences(Constants.SHAREDPREFERENCE_KEY, 0).getString(Constants.MOBILE, null);
+        user_name = getActivity().getSharedPreferences(Constants.SHAREDPREFERENCE_KEY, 0).getString(Constants.NAME, null);
+
+        name.setText(user_name);
+        mobile.setText(mobile_num);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setMessage("Do you want to logout?")
+                        .setCancelable(false)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                logout();
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alert = builder.create();
+                alert.show();
+            }
+        });
+        return v;
+    }
+
+    private void logout() {
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(Constants.SHAREDPREFERENCE_KEY, 0); // 0 - for private mode
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.commit();
+
+        Intent intent=new Intent(getActivity(),Login_Activity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(intent);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

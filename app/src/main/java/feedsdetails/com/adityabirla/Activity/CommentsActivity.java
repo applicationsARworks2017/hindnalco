@@ -71,6 +71,7 @@ public class CommentsActivity extends AppCompatActivity {
                     Toast.makeText(CommentsActivity.this,"Please enter comments",Toast.LENGTH_SHORT).show();
                 }
                 else{
+                    im_send.setEnabled(false);
                     if(CheckInternet.getNetworkConnectivityStatus(CommentsActivity.this)){
                         CommentAsyntask likeAsyntask=new CommentAsyntask();
                         likeAsyntask.execute(user_id,file_id,et_comments.getText().toString().trim());
@@ -207,9 +208,12 @@ public class CommentsActivity extends AppCompatActivity {
             Toast.makeText(CommentsActivity.this,server_message,Toast.LENGTH_SHORT).show();
             if(server_status==1){
                 et_comments.setText("");
+                cList.clear();
                 CommentList comentlist = new CommentList();
                 comentlist.execute(String.valueOf(file_id));
             }
+            im_send.setEnabled(true);
+
 
         }
     }

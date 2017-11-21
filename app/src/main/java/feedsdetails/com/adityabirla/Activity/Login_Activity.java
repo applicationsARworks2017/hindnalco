@@ -216,6 +216,8 @@ public class Login_Activity extends AppCompatActivity {
                 SharedPreferences sharedPreferences = Login_Activity.this.getSharedPreferences(Constants.SHAREDPREFERENCE_KEY, 0); // 0 - for private mode
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString(Constants.USER_ID, id);
+                editor.putString(Constants.MOBILE, contact_no);
+                editor.putString(Constants.NAME, username);
                 editor.commit();
                 Intent i=new Intent(Login_Activity.this,HomeActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

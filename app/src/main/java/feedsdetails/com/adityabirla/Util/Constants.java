@@ -27,6 +27,8 @@ public class Constants {
     public  static String DOWNLOADS="downloads/add.json";
     public  static String SHAREDPREFERENCE_KEY="hindalco";
     public  static String USER_ID="user_id";
+    public  static String NAME="name";
+    public  static String MOBILE="mobile";
     public  static String FILE_UPLOAD="files/add.json";
     public  static String COMMENTS="comments/add.json";
     public  static String COMMENT_LIST="comments/commentList";

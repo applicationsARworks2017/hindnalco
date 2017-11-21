@@ -15,21 +15,14 @@
       <ImageView
           android:layout_width="150dp"
           android:layout_height="150dp"
-          android:background="@drawable/hin_logo"/>
+          android:background="@drawable/logo"/>
       <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginTop="20dp"
           android:textColor="@color/colorPrimaryDark"
           android:textSize="15dp"
-          android:text="Hindalco Industries Limited," />
-      <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="5dp"
-          android:textColor="@color/colorPrimaryDark"
-          android:textSize="15dp"
-          android:text="Hirakud" />
+          android:text="Conference On Metal Power Industry" />
 
   </LinearLayout>
 

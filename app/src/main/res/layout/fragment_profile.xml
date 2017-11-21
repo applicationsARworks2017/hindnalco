@@ -4,14 +4,43 @@
     android:layout_height="match_parent"
     tools:context="feedsdetails.com.adityabirla.Fragment.Profile">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="120dp"
+            android:background="@drawable/logo"
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="Profile"/>
-    </RelativeLayout>
-
+            android:layout_marginTop="50dp"
+            android:id="@+id/name"
+            android:text="Name : Kunal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/mobile"
+            android:text="Mobile : 9090"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            android:id="@+id/sgapartment"
+            android:text="Brigade"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/btn_orange"
+            android:text="Logout"
+            android:id="@+id/logout"
+            android:textColor="@color/white"/>
+    </LinearLayout>
 </FrameLayout>
