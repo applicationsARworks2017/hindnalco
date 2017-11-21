@@ -92,7 +92,7 @@
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:text="MD's Voice"
+                        android:text="MD's Message On Safety"
                         android:layout_gravity="center_vertical"
                         android:textColor="@color/btn_orange"
                         android:textStyle="bold"/>
@@ -176,6 +176,46 @@
                         android:text="Gallery"
                         android:layout_gravity="center_vertical"
                         android:textColor="@color/indigo"
+                        android:textStyle="bold"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@mipmap/ic_keyboard_arrow_right_black_24dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="0dp"
+                        android:backgroundTint="@color/indigo"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:orientation="vertical"
+                    android:background="@color/indigo"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="10dp">
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/lin_helpdesk"
+                    android:layout_marginRight="20dp"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@mipmap/ic_live_help_white_24dp"
+                        android:backgroundTint="@color/green"
+                        />
+                    <TextView
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Help Desk"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@color/green"
                         android:textStyle="bold"/>
                     <ImageView
                         android:layout_width="wrap_content"

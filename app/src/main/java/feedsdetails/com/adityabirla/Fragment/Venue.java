@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import feedsdetails.com.adityabirla.Activity.FileView;
+import feedsdetails.com.adityabirla.Activity.HelpDesk;
 import feedsdetails.com.adityabirla.Activity.MapActivity;
-import feedsdetails.com.adityabirla.Activity.SceduleActivity;
 import feedsdetails.com.adityabirla.Activity.VideoPlayer;
 import feedsdetails.com.adityabirla.R;
 
@@ -34,7 +34,7 @@ public class Venue extends Fragment {
     private String mParam1;
     private String mParam2;
     LinearLayout lin_schedule;
-    LinearLayout lin_venue,lin_md,lin_galary;
+    LinearLayout lin_venue,lin_md,lin_galary,lin_helpdesk;
 
     private OnFragmentInteractionListener mListener;
 
@@ -78,6 +78,7 @@ public class Venue extends Fragment {
         lin_venue=(LinearLayout)v.findViewById(R.id.lin_venue);
         lin_galary=(LinearLayout)v.findViewById(R.id.lin_galary);
         lin_md=(LinearLayout)v.findViewById(R.id.lin_md);
+        lin_helpdesk=(LinearLayout)v.findViewById(R.id.lin_helpdesk);
         lin_schedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,6 +107,14 @@ public class Venue extends Fragment {
             public void onClick(View v) {
                 Intent intent=new Intent(getActivity(), FileView.class);
                 intent.putExtra("PATH","http://applicationworld.net/forum/files/MPC_Photo.pptx");
+                startActivity(intent);
+            }
+        });
+        lin_helpdesk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), HelpDesk.class);
+                //intent.putExtra("PATH","http://applicationworld.net/forum/files/MPC_Photo.pptx");
                 startActivity(intent);
             }
         });

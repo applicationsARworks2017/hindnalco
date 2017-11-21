@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/16b86ac9af2a89b95c53f206ca030aa012dd159a/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ea34579b1be157cd792376362157e9c54ebb4cd7">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_85b08ac8c12689057375e7420ee14a7f0c707d94/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/2d7399bf6785aae7cb80d26c33ccd75387b00691/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a8340f8c17337c864648c13abe1416d34c80ec14">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_48ccf72d9a835346fa2bcc65807e7774b83d6735/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/8cfc22230ec4a3b6d929219b72ef4e037226f510/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="27775d59b16610ac76f1b83693fedd9520396332">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6dce993936b031e0eb5c6f835ab1a36c94375ea5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/dd3a46120b79751f3e292b43a17d7b598a0a093c/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2c6fcd6267cbac6509a2e72a61127534a1d616cf">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_44de6274c80fa49d098a258ed10d8c1ae4d0b359/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/aad545d6ec88e7520305b34c404a1abc350147ac/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="71eda10e33212e44245524b5087366ff8d805825">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a672ac62bc05caae7555f14379fd5646179b8af5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/52446871b94da7768bb44c6d88fbf9b4779abeb1/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b000ecceb9877fefcdc7ab1959ff03df91551656">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9f658746f0f334601945f9d393e1973f96336169/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/bb821081bf16639380143d0999084767b8d61566/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="dcf8c83c3dead00a6c4fe313e95f7aaca20dc641">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f9625608d449900c85b9a4fff4d5ff8d03aa5502/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/80479e8f947c02224b837d13412b19dfde31a673/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="0c3e81d3eb86b86d194b5cdb6a4de78203f6f7fd">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2b761f9e7f4fcf37d46ff5214928397b5bc69722/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/12423912530df5f5a5fb40f91f5d8df648df28eb/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="724ce977487ab3a215d4d2eb47d8dccd9f30013f">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_10f4a4ef6af8f13bec726f400eb2af03ed88582d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/bd23d18b4c2a3bdaee57772489687888801e1e71/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9c9bdb4b2497465a6cf7d5e8f57c5298f828a380">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ebef9763ee1339a047a463a1a7df26f9d5b161ae/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/25.4.0/f6a2fc748ae3769633dea050563e1613e93c135e/support-annotations-25.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f6a2fc748ae3769633dea050563e1613e93c135e">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.4.0_9e5b32c4ca0a8815743157b29d04e1594f647d04/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/f312c237228bd0b77c88304a7d50305f83275810/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e04f28ac2dd9bbe48ced6fc87fedf46c2586f5d6">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4ed11e1f798ecb544848df58bb37472bbd600a74/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/163dca44eac8dff954baec9d336c8fed08f2c6bb/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="fd76d95678a6b2b8a49bb8a9fb5bcef7aedb70e7">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c943a9eabea0c2d8c9bc8fb7a27393ae16964a6c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/ffe1284f8671387ff247ba6dd87a12fd36a61d04/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="01a90bbb9495a8bbf6f3cfdf12f1b35caaa9524b">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_453f4ebf073deab5487c700f21e1c3630171156e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/a6b23f002df116185a845e41e512ef7202875be9/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="58adcfbe2c8393765e84c5489d01bba6a5159eb2">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a175c97fbc6bfcfe548cb25238c2942356be64ac/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/83e43d815dad9609f261f5b213272166e07244b6/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="0af4f577b4a21eb9be2a7f52e33b077b67e6d9f8">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_21635a725d18aa44ede9ade13554e3cc5dacd774/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/579761f49d06b0441bdb2a92c89d6f7a45a2cacf/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6d9ed9a288364688e7fcf6704776284dac1eb42e">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3d5fce82a431714d2dd3f09020f9cdf87001e4fc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/1243c1bcdbec6e43ecef2b4f88fbbbfd85c00bf0/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="345a1b5cf5b144ce18ba6962bc66a7e2f26c1c1b">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a9d59fdb8fed2560dc52bac09f7bd796f19db0eb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/3666e3789f6d8e74b3c9bf6b823e3e4757c70ab2/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="697679619b00837e3d09e9988a2e1e2a9009d502">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b336ef1a4cbc140dd8638a9df97bc24c8213fe59/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/ae11f40cbbfe09cf1bbded006810d5e930565f66/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="af6ee25641df3142059c0828517aa7ee6eba08d6">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3e86b8a947d3a04bf767eafc5bc8360b956f1aa2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/7025070104c6f054df661b1209afe5cf907b663a/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="77f9593d979f4347344be233bd0d888315f79517">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_99f10836f61da68bd8639792f19c18f4cfdbe2e8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/7d6974f3739bce08d97bdc53b567dd4eca93c32e/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a64026daf4819a589aea776f5deb19b257a104d1">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_837121e8cb22206653fcf6ccb8c8e5df2ec9eb78/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/8f293190105bd4f0d54d67c98bb763f2a5bfcfdc/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4b8df1b1e51fe14b0e89b3845dc2e215a024a09f">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_cc0191e0dcb2031856aa53fb1067de46ff9d38a1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/bdb996c2293c793f2940e30ae5df360c5b07edec/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9aedc597d74c6d77258ce5236e9abff0c3cc65e3">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8ee6c8513ae54886a8fb7552c02c1c0943b190c9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/bb821081bf16639380143d0999084767b8d61566/output/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="0632f06970823b7e3436f649bfa65b47035c91d0">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-22.2.0_91577b58d7c0f9c1a5a96e1d01f8ff7787ae4d14/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/efc18d269486d5d4fc69e4186828a414a5975d65/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="cb4af597d079ffdc0984a3ec2c03cbf6a1b9f869">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1942ccac6adafa8f45beb77f4f8aaca0b213f8b5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/76c46accd6806b60212668f09f842c387cb319c8/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="eb576427887e497cd958a475475f9206e38dc314">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_975aafd26aeb7319a64e1d09547510a6dc719229/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/b0cb6b49318cf07dba10cfb73a5390f0f8aedaee/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="744c49c02a27569cc4cc049685d3649e4ef439f2">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6472590134e7374c4ea8fe8f110241f100118038/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mobileapplication/.android/build-cache/c49dfe19ab0471311dd36bbd59cb57ab1d5579c5/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="0a1897426566e408a5c20a3d931f77d89771d07f">
+        <dex dex="/Users/mobileapplication/Desktop/androidApps/hindnalco/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_25cfa048330da4d54b942799ba47f90fd4f800c8/classes.dex" />
+    </item>
+
+</items>

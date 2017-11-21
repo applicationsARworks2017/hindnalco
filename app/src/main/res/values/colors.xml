@@ -8,10 +8,11 @@
     <color name="colorAccent">#B71C1C</color>
     <color name="background">#f1f1f1</color>
     <color name="deep_background">	#9c9c9c</color>
-    <color name="white">	#FFFFFF</color>
-    <color name="black">	#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
     <color name="blue">	#0D47A1</color>
-    <color name="indigo">	#42A5F5</color>
+    <color name="indigo">#42A5F5</color>
+    <color name="green">#4DBD33</color>
     <color name="btn_orange">#f96e3a</color>
 
 </resources>
