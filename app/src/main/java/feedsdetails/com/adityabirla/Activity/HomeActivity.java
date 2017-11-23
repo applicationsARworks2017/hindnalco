@@ -89,7 +89,7 @@ public class HomeActivity extends AppCompatActivity {
 
         if (actionBar != null) {
             if(text.toString().contentEquals("Venue")){
-                actionBar.setTitle("Hindalco Industries Limited, Hirakud");
+                actionBar.setTitle("Hindalco Ind. Ltd., Hirakud");
 
             }
             else {

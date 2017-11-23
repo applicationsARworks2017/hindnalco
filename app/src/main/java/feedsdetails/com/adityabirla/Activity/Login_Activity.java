@@ -103,7 +103,7 @@ public class Login_Activity extends AppCompatActivity {
 
         private static final String TAG = "SynchMobnum";
         String server_message;
-        String id,username,email_address,contact_no;
+        String id,username,email_address,contact_no,full_name;
         int server_status;
 
         @Override
@@ -192,7 +192,8 @@ public class Login_Activity extends AppCompatActivity {
                     username=j_obj.getString("username");
                     email_address=j_obj.getString("email_address");
                     contact_no=j_obj.getString("contact_no");
-                    User user_list=new User(id,username,email_address,contact_no);
+                    full_name=j_obj.getString("full_name");
+                    User user_list=new User(id,username,email_address,contact_no,full_name);
                     userlist.add(user_list);
                     } else {
                         server_message = "Invalid Credentials";
@@ -217,6 +218,7 @@ public class Login_Activity extends AppCompatActivity {
                 editor.putString(Constants.USER_ID, id);
                 editor.putString(Constants.MOBILE, contact_no);
                 editor.putString(Constants.NAME, username);
+                editor.putString(Constants.FULLNAME, full_name);
                 editor.commit();
                 Intent i=new Intent(Login_Activity.this,HomeActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

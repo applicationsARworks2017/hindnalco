@@ -605,9 +605,10 @@ public class FeedList extends Fragment {
                             String no_of_share = o_list_obj.getString("no_of_share");
                             String no_of_downloads = o_list_obj.getString("no_of_downloads");
                             String description=o_list_obj.getString("description");
+                            String full_name=o_list_obj.getString("full_name");
                             String date = o_list_obj.getString("date");
                             list1=new Feeds(id,user_name,user_id,title,file_type,file_name,no_of_like,no_of_comment,no_of_share,
-                                                    no_of_downloads,date,description);
+                                                    no_of_downloads,date,description,full_name);
                             fList.add(list1);
                         }
                     }

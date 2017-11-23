@@ -45,7 +45,7 @@
             android:label="Home"
             android:screenOrientation="portrait" />
         <activity android:name=".Activity.VideoPlayer"
-            android:label="MD's Voice"/>
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity
             android:name=".Activity.SceduleActivity"
             android:label="Program Schedule" />

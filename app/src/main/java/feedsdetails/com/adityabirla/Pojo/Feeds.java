@@ -6,7 +6,7 @@ package feedsdetails.com.adityabirla.Pojo;
 
 public class Feeds {
     String id,user_name,user_id,title,file_type,file_name,no_of_like,no_of_comment,no_of_share,
-            no_of_downloads,date,description;
+            no_of_downloads,date,description,full_name;
 
     public Feeds() {
 
@@ -108,8 +108,16 @@ public class Feeds {
         this.description = description;
     }
 
+    public String getFull_name() {
+        return full_name;
+    }
+
+    public void setFull_name(String full_name) {
+        this.full_name = full_name;
+    }
+
     public Feeds(String id, String user_name, String user_id, String title, String file_type, String file_name,
-                 String no_of_like, String no_of_comment, String no_of_share, String no_of_downloads, String date, String description) {
+                 String no_of_like, String no_of_comment, String no_of_share, String no_of_downloads, String date, String description, String full_name) {
         this.id=id;
         this.user_id=user_id;
         this.user_name=user_name;
@@ -122,6 +130,8 @@ public class Feeds {
         this.no_of_downloads=no_of_downloads;
         this.date=date;
         this.description=description;
+        this.full_name=full_name;
+
 
 
 

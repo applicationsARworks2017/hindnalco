@@ -19,6 +19,7 @@ import feedsdetails.com.adityabirla.R;
 
 public class Constants {
 
+    public static final String FULLNAME = "full_name";
     public static String ONLINE_URL="http://applicationworld.net/forum/";
     public  static String LOGIN="users/loginCheck.json";
     public  static String LIKE="likes/add.json";

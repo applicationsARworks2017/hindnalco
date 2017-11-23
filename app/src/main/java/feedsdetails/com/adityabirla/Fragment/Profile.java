@@ -83,10 +83,11 @@ public class Profile extends Fragment {
         mobile=(TextView)v.findViewById(R.id.mobile);
         logout=(Button) v.findViewById(R.id.logout);
         mobile_num = getActivity().getSharedPreferences(Constants.SHAREDPREFERENCE_KEY, 0).getString(Constants.MOBILE, null);
-        user_name = getActivity().getSharedPreferences(Constants.SHAREDPREFERENCE_KEY, 0).getString(Constants.NAME, null);
+        user_name = getActivity().getSharedPreferences(Constants.SHAREDPREFERENCE_KEY, 0).getString(Constants.FULLNAME, null);
 
         name.setText(user_name);
         mobile.setText(mobile_num);
+        mobile.setVisibility(View.GONE);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

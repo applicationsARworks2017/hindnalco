@@ -5,7 +5,7 @@ package feedsdetails.com.adityabirla.Pojo;
  */
 
 public class User {
-    String id,username,email_address,contact_no;
+    String id,username,email_address,contact_no,full_name;
 
     public User() {
 
@@ -43,11 +43,12 @@ public class User {
         this.contact_no = contact_no;
     }
 
-    public User(String id, String username, String email_address, String contact_no) {
+    public User(String id, String username, String email_address, String contact_no, String full_name) {
         this.id=id;
         this.username=username;
         this.email_address=email_address;
         this.contact_no=contact_no;
+        this.full_name=full_name;
 
     }
 }

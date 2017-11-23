@@ -189,7 +189,7 @@ public class FeedAdapter extends BaseAdapter {
         }
 
 
-        holder.name.setText(_pos.getUser_name());
+        holder.name.setText(_pos.getFull_name());
         holder.questions_desc.setText(_pos.getDescription());
         holder.time.setText(_pos.getDate());
         holder.contentheading.setText(_pos.getTitle());
